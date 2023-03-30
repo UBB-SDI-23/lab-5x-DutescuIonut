@@ -1,3 +1,5 @@
+import { Car } from "./Car";
+
 export interface Owner{
 
     id:number;
@@ -6,4 +8,5 @@ export interface Owner{
     CNP:string;
     Email:string;
     Address:string;
+    cars:Car[];
 }
