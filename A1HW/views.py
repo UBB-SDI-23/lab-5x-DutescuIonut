@@ -1,4 +1,5 @@
 from django.views.decorators.csrf import csrf_exempt
+from drf_spectacular.utils import extend_schema
 
 from .models import Car,CarBrand,Owner,CarWorkshop,CarTunedBy
 from django.http import JsonResponse
@@ -18,7 +19,7 @@ from rest_framework.views import APIView
 
 
 class CarAPIView(APIView):
-
+    @extend_schema( responses={201: CarSerializer},)
     @api_view(['GET', 'POST'])
     def car_list(request):
         id = request.query_params.get('id')
@@ -49,6 +50,7 @@ class CarAPIView(APIView):
                 print(serializer.errors)
                 return Response(status=status.HTTP_404_NOT_FOUND)
 
+    @extend_schema(responses={201: CarDetailSerializer}, )
     @api_view(['GET','PUT','DELETE'])
     def car_detail(request, id):
         try:
@@ -76,7 +78,7 @@ class CarAPIView(APIView):
 
 
 class CarBrandAPIView(APIView):
-
+    @extend_schema( responses={201: CarBrandSerializer},)
     @api_view(['GET', 'POST'])
     def carBrand_list(request):
 
@@ -91,10 +93,7 @@ class CarBrandAPIView(APIView):
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-
-
-
-
+    @extend_schema(responses={201: CarBrandDetailSerializer}, )
     @api_view(['GET','PUT','DELETE'])
     def carBrand_detail(request, name):
         try:
@@ -118,6 +117,7 @@ class CarBrandAPIView(APIView):
 
 
 class OwnerAPIView(APIView):
+    @extend_schema(responses={201: OwnerSerializer}, )
     @api_view(['GET','POST'])
     def owner_list(request):
         if request.method == 'GET':
@@ -131,7 +131,7 @@ class OwnerAPIView(APIView):
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-
+    @extend_schema(responses={201: OwnerDetailSerializer}, )
     @api_view(['GET','PUT','DELETE'])
     def owner_detail(request, id):
         try:
@@ -155,6 +155,7 @@ class OwnerAPIView(APIView):
 
 
 class CarWorkshopAPIView(APIView):
+    @extend_schema( responses={201: CarWorkshopSerializer},)
     @api_view(['GET','POST'])
     def workshop_list(request):
         if request.method == 'GET':
@@ -168,7 +169,7 @@ class CarWorkshopAPIView(APIView):
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-
+    @extend_schema(responses={201: CarWorkshopDetailSerializer}, )
     @api_view(['GET','PUT','DELETE'])
     def workshop_detail(request, id):
         try:
@@ -191,6 +192,7 @@ class CarWorkshopAPIView(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
 
 class CarTunedByAPIView(APIView):
+    @extend_schema( responses={201: CarTunedBySerializer},)
     @api_view(['GET','POST'])
     def carstuned_list(request):
         if request.method == 'GET':
@@ -229,6 +231,7 @@ class CarTunedByAPIView(APIView):
 
 
 class Statistics(APIView):
+     @extend_schema( responses={201: StatisticSerializer},)
      @api_view(['GET'])
      def statistic(request):
         statistics = CarBrand.objects.annotate(
@@ -250,6 +253,7 @@ class Statistics(APIView):
 #         # return Response(serializer.data)
 
 class StatisticOwnerCarBrandEmploy(APIView):
+    @extend_schema( responses={201: StatisticSerializerOwnerCarBrandEmploy},)
     @api_view(['GET'])
     def statistic(request):
         statistics = Owner.objects.annotate(
@@ -263,6 +267,7 @@ class StatisticOwnerCarBrandEmploy(APIView):
 
 
 class MultipleCarBrandView(APIView):
+
     @csrf_exempt
     @api_view(['POST'])
     def bulkAdd(request):

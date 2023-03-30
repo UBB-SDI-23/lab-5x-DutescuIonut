@@ -32,8 +32,10 @@ ALLOWED_HOSTS = ["*"]
 
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+    #'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 GRAPH_MODELS = {
@@ -41,7 +43,17 @@ GRAPH_MODELS = {
   'group_models': True,
 }
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'A1HW API',
+    'DESCRIPTION': "Documentation for API",
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'Public': True,
+    # OTHER SETTINGS
+}
+
 INSTALLED_APPS = [
+    'drf_spectacular',
     'rest_framework_swagger',
     "django_extensions",
     "django_filters",
