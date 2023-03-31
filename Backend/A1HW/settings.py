@@ -25,9 +25,10 @@ SECRET_KEY = "django-insecure-$a#siagg2m&ly5186oh!@$5o2docmbp!g@63u$d^!94s5bf(c(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
 
+ALLOWED_HOSTS=['*']
 
+CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 
@@ -53,6 +54,7 @@ SPECTACULAR_SETTINGS = {
 }
 
 INSTALLED_APPS = [
+    'corsheaders',
     'drf_spectacular',
     'rest_framework_swagger',
     "django_extensions",
@@ -69,16 +71,16 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-CORS_ALLOW_ALL_ORIGINS= True
+
 ROOT_URLCONF = "A1HW.urls"
 
 TEMPLATES = [

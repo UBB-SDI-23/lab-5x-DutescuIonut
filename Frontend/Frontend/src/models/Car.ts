@@ -11,7 +11,7 @@ export interface Car
     ProductionYear:number;
     SeatsNumber:number;
     Color:string;
-    OnwerCNP:Owner;//...
+    OwnerCNP:Owner;//...
     workshops:CarTunedBy[];
     // workshops:string;
 }
