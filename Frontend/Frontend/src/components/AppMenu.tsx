@@ -34,6 +34,15 @@ export const AppMenu = () => {
 						startIcon={<LocalLibraryIcon />}>
 						Owners
 					</Button>
+					<Button
+						variant={path.startsWith("/averageprodyear") ? "outlined" : "text"}
+						to="/averageprodyear"
+						component={Link}
+						color="inherit"
+						sx={{ mr: 5 }}	
+						startIcon={<LocalLibraryIcon />}>
+						Average Production Year - Statistic
+					</Button>
 				</Toolbar>
 			</AppBar>
 		</Box>

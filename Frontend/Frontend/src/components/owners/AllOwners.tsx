@@ -27,7 +27,8 @@ export const AllOwners = () => {
 
 	useEffect(() => {
 		setLoading(true);
-		axios.get(`${GlobalURL}/owners/`)
+		// axios.get(`${GlobalURL}/owners/`)
+		axios.get(`/owners/`)
 		  .then(response => {
 			setOwners(response.data);
 			setLoading(false);
