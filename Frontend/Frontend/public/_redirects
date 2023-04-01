@@ -1,3 +1,1 @@
-/api/* http://ec2-16-16-100-78.eu-north-1.compute.amazonaws.com/app1/:splat 200!
-/owners/* https://ec2-16-16-100-78.eu-north-1.compute.amazonaws.com/owners/:splat 200!
-/*    /index.html   200
+/owners/* https://ec2-16-16-100-78.eu-north-1.compute.amazonaws.com/:splat 200
