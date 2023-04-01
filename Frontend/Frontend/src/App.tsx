@@ -7,7 +7,7 @@ import { AllOwners } from "./components/owners/AllOwners";
 import { OwnerAdd } from "./components/owners/OwnerAdd";
 import { OwnerDelete } from "./components/owners/OwnerDelete";
 import { OwnerDetails } from "./components/owners/OwnerDetails";
-// import {AverageProdYear} from "./components/statistics/AverageProdYear";
+import {AverageProdYear} from "./components/statistics/AverageProdYear";
 function App() {
 	return (
 		<React.Fragment>
@@ -21,7 +21,7 @@ function App() {
 					<Route path="/owners/:ownerId/edit" element={<OwnerDetails />} />
 					<Route path="/owners/:ownerId/delete" element={<OwnerDelete />} />
 					<Route path="/owners/add" element={<OwnerAdd />} />
-					{/* <Route path="/averageprodyear" element={<AverageProdYear/>}></Route> */}
+					<Route path="/averageprodyear" element={<AverageProdYear/>}></Route>
 				</Routes>
 			</Router>
 		</React.Fragment>
