@@ -19,7 +19,7 @@ import ReadMoreIcon from "@mui/icons-material/ReadMore";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddIcon from "@mui/icons-material/Add";
-import { GlobalURL } from "../../main";
+import { GlobalURL } from "../../constants";
 
 export const AverageProdYear = () => {
 	const [loading, setLoading] = useState(false);

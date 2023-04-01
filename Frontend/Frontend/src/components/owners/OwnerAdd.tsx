@@ -8,7 +8,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import axios from "axios";
-import { GlobalURL } from "../../main";
+import { GlobalURL } from "../../constants";
 
 export const OwnerAdd = () => {
 	const navigate = useNavigate();

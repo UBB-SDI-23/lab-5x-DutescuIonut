@@ -19,7 +19,7 @@ import ReadMoreIcon from "@mui/icons-material/ReadMore";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddIcon from "@mui/icons-material/Add";
-import { GlobalURL } from "../../main";
+import { GlobalURL } from "../../constants";
 
 export const AllOwners = () => {
 	const [loading, setLoading] = useState(false);
@@ -27,8 +27,7 @@ export const AllOwners = () => {
 
 	useEffect(() => {
 		setLoading(true);
-		// axios.get(`${GlobalURL}/owners/`)
-		axios.get(`/owners/`)
+		axios.get(`${GlobalURL}/owners/`)
 		  .then(response => {
 			setOwners(response.data);
 			setLoading(false);
