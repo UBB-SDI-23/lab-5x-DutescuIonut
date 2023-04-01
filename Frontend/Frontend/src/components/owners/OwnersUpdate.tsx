@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { Owner } from "../../models/Owner";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import axios from "axios";
-
+import { GlobalURL } from "../../constants";
 
 
 export const OwnerUpdate = () => {

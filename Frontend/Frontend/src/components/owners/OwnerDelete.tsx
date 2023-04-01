@@ -2,7 +2,7 @@ import { Container, Card, CardContent, IconButton, CardActions, Button } from "@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import axios from "axios";
-import { GlobalURL } from "../../main";
+import { GlobalURL } from "../../constants";
 
 export const OwnerDelete = () => {
 	const { ownerId } = useParams();
