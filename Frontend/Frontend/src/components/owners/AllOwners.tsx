@@ -12,6 +12,7 @@ import {
 	Tooltip,
 } from "@mui/material";
 import axios from "axios";
+import { styled } from '@mui/material/styles';
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Owner } from "../../models/Owner";
@@ -20,6 +21,13 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddIcon from "@mui/icons-material/Add";
 import { GlobalURL } from "../../constants";
+
+
+const StyledTableRow = styled(TableRow)`
+  &:hover {
+    background-color: #ecebed;
+  }
+`;
 
 export const AllOwners = () => {
 	const [loading, setLoading] = useState(false);
@@ -68,7 +76,7 @@ export const AllOwners = () => {
 						</TableHead>
 						<TableBody>
 							{owners.map((owner, index) => (
-								<TableRow key={owner.id}>
+								<StyledTableRow key={owner.id}>
 									<TableCell component="th" scope="row">
 										{index + 1}
 									</TableCell>
@@ -105,7 +113,7 @@ export const AllOwners = () => {
 											</Tooltip>
 										</IconButton>
 									</TableCell>
-								</TableRow>
+								</StyledTableRow>
 							))}
 						</TableBody>
 					</Table>

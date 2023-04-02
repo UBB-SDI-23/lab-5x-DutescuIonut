@@ -7,16 +7,15 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { GlobalURL } from "../../constants";
-
+import { styled } from '@mui/material/styles';
+import './OwnerDetails.css';
 export const OwnerDetails = () => {
 	const { ownerId } = useParams();
 	const [owner, setOwner] = useState<Owner>();
 
 	useEffect(() => {
 		const fetchOwner = async () => {
-			// TODO: use axios instead of fetch
-			// TODO: handle errors
-			// TODO: handle loading state
+			
 			const response = await fetch(`${GlobalURL}/owners/${ownerId}`);
 			const owner = await response.json();
 			setOwner(owner);
@@ -32,13 +31,18 @@ export const OwnerDetails = () => {
 						<ArrowBackIcon />
 					</IconButton>{" "}
 					<h1>Owner Details</h1>
-					<p>Owner LastName: {owner?.LastName}</p>
-                    <p>Owner FirstName: {owner?.FirstName}</p>
-					<p>Owner CNP: {owner?.CNP}</p>
-					<p>Owner Email: {owner?.Email}</p>
-                    <p>Owner Address: {owner?.Address}</p>
-					<p>Owner cars:</p>
-					<ul>
+					<p>LastName: {owner?.LastName}</p>
+					
+                    <p>FirstName: {owner?.FirstName}</p>
+					
+					<p>CNP: {owner?.CNP}</p>
+					
+					<p>Email: {owner?.Email}</p>
+
+                    <p>Address: {owner?.Address}</p>
+					
+					<p>Cars:</p>
+					<ol>
 						{owner?.cars?.map((car) => (
 							<li key={car.id}>
 							{[ 
@@ -53,7 +57,7 @@ export const OwnerDetails = () => {
 						  </li>
 							
 						))}
-					</ul>
+					</ol>
 				</CardContent>
 				<CardActions>
 					<IconButton component={Link} sx={{ mr: 3 }} to={`/owners/${ownerId}/edit`}>

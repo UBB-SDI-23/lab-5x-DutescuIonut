@@ -48,7 +48,7 @@ export const AverageProdYear = () => {
 		<h1>Average Production Year Carbrands</h1>
 		<p>Here we have carbrands ordered by average production year of their existent cars</p>
 		{loading && <CircularProgress />}
-		{!loading && statistics.length === 0 && <p>No owners found</p>}
+		{!loading && statistics.length === 0 && <p>No statistic found</p>}
 		
 		{!loading && statistics.length > 0 && (
 			<TableContainer component={Paper}>
