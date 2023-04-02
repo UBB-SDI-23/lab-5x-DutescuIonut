@@ -8,7 +8,7 @@ import { OwnerAdd } from "./components/owners/OwnerAdd";
 import { OwnerDelete } from "./components/owners/OwnerDelete";
 import { OwnerDetails } from "./components/owners/OwnerDetails";
 import { OwnerUpdate } from "./components/owners/OwnerUpdate";
-import {AverageProdYear} from "./components/statistics/AverageProdYear";
+import { AverageProdYear } from "./components/statistics/AverageProdYear"
 function App() {
 	return (
 		<React.Fragment>
