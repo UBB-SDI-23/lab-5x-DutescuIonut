@@ -8,9 +8,9 @@ import {
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import SchoolIcon from "@mui/icons-material/School";
-
-import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
-
+import PieChartIcon from '@mui/icons-material/PieChart';
+import PersonIcon from '@mui/icons-material/Person';
+import WarehouseIcon from '@mui/icons-material/Warehouse';
 export const AppMenu = () => {
   const location = useLocation();
   const path = location.pathname;
@@ -19,15 +19,16 @@ export const AppMenu = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ marginBottom: "20px", background: 'linear-gradient(to right, #980cf0, #2557fa)'}}>
         <Toolbar>
-          <Link to="/">
-            <img
-              src="./assets/home.png"
-              alt="home"
-              style={{ marginRight: "16px" }}
-			  width={"35px"}
-			  height={"35px"}
-            />
-          </Link>
+          <IconButton
+						component={Link}
+						to="/"
+						size="large"
+						edge="start"
+						color="inherit"
+						aria-label="warehouse"
+						sx={{ mr: 2 }}>
+						<WarehouseIcon />
+					</IconButton>
           <Typography variant="h6" component="div" sx={{ mr: 5 }}>
             App management
           </Typography>
@@ -37,13 +38,9 @@ export const AppMenu = () => {
             component={Link}
             color="inherit"
             sx={{ mr: 5 }}
-            
+            startIcon={<PersonIcon></PersonIcon>}
           >
-			<img src=".assets/owner.png" 
-			alt="owner" 
-			style={{ marginRight: '8px' }} 
-			width={"25px"}
-			height={"25px"}/>
+			
  
             Owners
           </Button>
@@ -53,13 +50,9 @@ export const AppMenu = () => {
             component={Link}
             color="inherit"
             sx={{ mr: 5 }}
-      
+            startIcon={<PieChartIcon></PieChartIcon>}
           >
-			<img src="src/assets/data-management.png" 
-			alt="owner" 
-			style={{ marginRight: '8px' }} 
-			width={"25px"}
-			height={"25px"}/>
+            
             Average Production Year - Statistic
           </Button>
         </Toolbar>
