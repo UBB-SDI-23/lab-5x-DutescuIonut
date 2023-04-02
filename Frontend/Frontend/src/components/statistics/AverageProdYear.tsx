@@ -81,4 +81,4 @@ export const AverageProdYear = () => {
 );
 };
 
-export default AverageProdYear;
+//export default AverageProdYear;
