@@ -21,7 +21,7 @@ export const AppMenu = () => {
         <Toolbar>
           <Link to="/">
             <img
-              src="src/assets/home.png"
+              src="../src/assets/home.png"
               alt="home"
               style={{ marginRight: "16px" }}
 			  width={"35px"}
@@ -39,7 +39,7 @@ export const AppMenu = () => {
             sx={{ mr: 5 }}
             
           >
-			<img src="src/assets/owner.png" 
+			<img src="../src/assets/owner.png" 
 			alt="owner" 
 			style={{ marginRight: '8px' }} 
 			width={"25px"}
@@ -55,7 +55,7 @@ export const AppMenu = () => {
             sx={{ mr: 5 }}
       
           >
-			<img src="src/assets/data-management.png" 
+			<img src="../src/assets/data-management.png" 
 			alt="owner" 
 			style={{ marginRight: '8px' }} 
 			width={"25px"}
