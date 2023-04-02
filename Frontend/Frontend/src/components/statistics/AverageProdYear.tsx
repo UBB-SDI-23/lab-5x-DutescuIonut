@@ -21,8 +21,14 @@ import { GlobalURL } from "../../constants";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+interface Statistic {
+	id: number;
+	CarBrand: string;
+	avg_production_year: number;
+	car_count: number;
+  }
 export const AverageProdYear = () => {
-  const [statistics, setStatistics] = useState([]);
+    const [statistics, setStatistics] = useState<Statistic[]>([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
 	setLoading(true);
