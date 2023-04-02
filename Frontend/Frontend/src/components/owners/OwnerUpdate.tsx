@@ -61,7 +61,7 @@ export const OwnerUpdate = () => {
             <IconButton
               component={Link}
               sx={{ mr: 3 }}
-              to={`/owners/${ownerId}`}
+              to={`/owners/`}
             >
               <ArrowBackIcon />
             </IconButton>{" "}
