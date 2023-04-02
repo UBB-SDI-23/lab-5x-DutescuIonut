@@ -94,11 +94,15 @@ export const AllOwners = () => {
 										</IconButton>
 
 										<IconButton component={Link} sx={{ mr: 3 }} to={`/owners/${owner.id}/edit`}>
-											<EditIcon />
+											<Tooltip title="Edit owner details" arrow>
+												<EditIcon />
+											</Tooltip>
 										</IconButton>
 
 										<IconButton component={Link} sx={{ mr: 3 }} to={`/owners/${owner.id}/delete`}>
-											<DeleteForeverIcon sx={{ color: "red" }} />
+											<Tooltip title="Delete owner" arrow>
+												<DeleteForeverIcon sx={{ color: "red" }} />
+											</Tooltip>
 										</IconButton>
 									</TableCell>
 								</TableRow>

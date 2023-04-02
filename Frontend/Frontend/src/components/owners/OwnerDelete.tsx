@@ -11,13 +11,13 @@ export const OwnerDelete = () => {
 	const handleDelete = async (event: { preventDefault: () => void }) => {
 		event.preventDefault();
 		await axios.delete(`${GlobalURL}/owners/${ownerId}`);
-		// go to owners list
+		
 		navigate("/owners");
 	};
 
 	const handleCancel = (event: { preventDefault: () => void }) => {
 		event.preventDefault();
-		// go to owners list
+		
 		navigate("/owners");
 	};
 
