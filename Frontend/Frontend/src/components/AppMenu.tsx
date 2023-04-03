@@ -52,7 +52,7 @@ export const AppMenu = () => {
             sx={{ mr: 5 }}
             startIcon={<PieChartIcon></PieChartIcon>}
           >
-            
+
             Average Production Year - Statistic
           </Button>
         </Toolbar>

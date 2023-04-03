@@ -12,7 +12,7 @@ from rest_framework.test import APITestCase
 from rest_framework import status
 from A1HW.models import CarBrand, Owner, Car
 from A1HW.serializers import CarBrandSerializer, StatisticSerializer, StatisticSerializerOwnerCarBrandEmploy
-from A1HW.views import CarBrandAPIView
+from A1HW.viewsFolder import CarBrandAPIView
 from unittest.mock import Mock
 
 from django.test import TestCase
