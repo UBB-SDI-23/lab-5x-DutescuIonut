@@ -1,3 +1,3 @@
 /owners/* http://ec2-16-16-90-250.eu-north-1.compute.amazonaws.com/owners/:splat 200!
-/averageprodyear/* http:/ec2-16-16-90-250.eu-north-1.compute.amazonaws.com/averageprodyear/:splat 200!
-/*    /index.html   200 
+/averageprodyear/* http://ec2-16-16-90-250.eu-north-1.compute.amazonaws.com/averageprodyear/:splat 200!
+/*    /index.html   200 
